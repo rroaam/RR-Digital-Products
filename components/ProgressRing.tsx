@@ -1,7 +1,7 @@
 /**
- * Animated SVG progress ring with a warm-sunlight gradient stroke.
+ * Progress ring — Swiss: a single hairline arc, no gradient, square caps.
  */
-import React, { useId } from 'react';
+import React from 'react';
 
 interface Props {
   value: number; // 0..1
@@ -14,11 +14,10 @@ interface Props {
 export default function ProgressRing({
   value,
   size = 92,
-  stroke = 8,
+  stroke = 4,
   label,
   sublabel,
 }: Props) {
-  const gid = useId();
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;
   const clamped = Math.max(0, Math.min(1, value));
@@ -27,19 +26,12 @@ export default function ProgressRing({
   return (
     <div className="ring" style={{ width: size, height: size }}>
       <svg width={size} height={size} aria-hidden="true">
-        <defs>
-          <linearGradient id={gid} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="var(--amber)" />
-            <stop offset="55%" stopColor="var(--sun)" />
-            <stop offset="100%" stopColor="var(--ocean)" />
-          </linearGradient>
-        </defs>
         <circle
           cx={size / 2}
           cy={size / 2}
           r={r}
           fill="none"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="var(--line-2)"
           strokeWidth={stroke}
         />
         <circle
@@ -47,13 +39,13 @@ export default function ProgressRing({
           cy={size / 2}
           r={r}
           fill="none"
-          stroke={`url(#${gid})`}
+          stroke="var(--accent)"
           strokeWidth={stroke}
-          strokeLinecap="round"
+          strokeLinecap="butt"
           strokeDasharray={c}
           strokeDashoffset={offset}
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          style={{ transition: 'stroke-dashoffset 0.7s cubic-bezier(.22,1,.36,1)' }}
+          style={{ transition: 'stroke-dashoffset 0.6s cubic-bezier(.22,1,.36,1)' }}
         />
       </svg>
       <div className="ring-center">
