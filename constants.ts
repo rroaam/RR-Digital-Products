@@ -1,14 +1,17 @@
 /**
- * @license
- * SPDX-License-Identifier: Apache-2.0
-*/
+ * Knowhere Afterglow — seed copy
+ */
 
-export const INITIAL_PLACEHOLDERS = [
-    "Design a minimalist weather card",
-    "Show me a live stock ticker",
-    "Create a futuristic login form",
-    "Build a stock portfolio dashboard",
-    "Make a brutalist music player",
-    "Generate a sleek pricing table",
-    "Ask for anything"
-];
+export const COPY = {
+  headline: 'Knowhere Afterglow',
+  subhead: 'Festival dust → Yosemite granite → Big Sur Pacific.',
+  tagline: 'Your field guide for packing, van setup, and the road home.',
+  emptyPacking:
+    'You have not packed anything yet. Start with the Festival Duffel, then protect the clean road-trip bag.',
+  completion:
+    'Packed. Charged. Ready to disappear into California for a few days.',
+  vanNote:
+    "Don't leave until you can confidently fill water, use power, operate the toilet, and get into the pop-top.",
+  roadRule:
+    'Keep the van clean enough that it can become the set at any stop.',
+} as const;

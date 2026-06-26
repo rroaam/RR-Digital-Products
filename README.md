@@ -1,20 +1,46 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Knowhere Afterglow
 
-# Run and deploy your AI Studio app
+> Festival dust → Yosemite granite → Big Sur Pacific.
 
-This contains everything you need to run your app locally.
+A polished, mobile-first mini guide app for a two-person **Knowhere Festival →
+Yosemite → Big Sur / Highway 1 → Los Angeles** camper-van road trip. It is a
+compact "travel operating system": packing, van setup, content planning, and the
+road home — editorial, cinematic, and built to feel great on an iPhone.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1pzH0IljHzzxeEDSEi8nTRzpLdYI8_8iY
+No backend, no accounts. Everything persists to `localStorage`.
 
-## Run Locally
+## Features
 
-**Prerequisites:**  Node.js
+- **Home dashboard** — overall packing progress, days-until-departure, quick
+  category cards, action shortcuts, and a mini route strip.
+- **Packing checklist** (the main experience) — progress ring, status filters
+  (All / Need to Buy / Need to Charge / Packed), search, per-item quantity,
+  note, category, shop aisle, buy/charge flags, and must / nice-to-have
+  priority. Add, edit, and delete custom items. Mark-all-packed and reset.
+- **Pack This Way** — a five-container packing system (festival duffel, clean
+  road-trip duffel, camp bin, food bin, camera backpack, front-seat pouch).
+- **Shopping list** — auto-populated from every "need to buy" item, grouped by
+  aisle, with copy-list and clear-purchased.
+- **Route** — a vertical journey timeline (Knowhere → Yosemite → Big Sur → LA)
+  plus a route-prep checklist.
+- **Shot Board** — Roadsurfer content prompts per leg with mood, gear, time of
+  day, "captured" toggle, 1–5 rating, and notes.
+- **Van Pickup** — a Sprinter operations checklist to walk with the rep, plus
+  the power / electronics kit.
+- **Export / import** — packing list as Markdown, full app state as JSON.
 
+## Tech
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+React + TypeScript + Vite. Custom CSS design system, inline SVG icons, zero
+runtime dependencies beyond React. `localStorage` persistence.
+
+## Run locally
+
+**Prerequisites:** Node.js
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build → dist/
+npm run preview  # preview the production build
+```
